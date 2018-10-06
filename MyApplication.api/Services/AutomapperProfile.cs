@@ -8,6 +8,7 @@ namespace MyApplication.api.Services
     {
         public AutoMapperProfile()
         {
+            //mapping
             CreateMap<User, DTO.User>().ReverseMap();
         }
     }
