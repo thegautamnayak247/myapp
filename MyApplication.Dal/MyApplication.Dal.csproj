@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRegistrationDal.cs" />
-    <Compile Include="RegistrationDal.cs" />
+    <Compile Include="IUserDal.cs" />
+    <Compile Include="UserDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

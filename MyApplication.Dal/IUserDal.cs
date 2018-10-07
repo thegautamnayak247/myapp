@@ -3,7 +3,7 @@ using MyApplication.Core;
 
 namespace MyApplication.Dal
 {
-    public interface IRegistrationDal
+    public interface IUserDal
     {
         List<User> GetUsers();
         bool SaveUser(User user);

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace MyApplication.Dal
 {
-    public class RegistrationDal : IRegistrationDal
+    public class UserDal : IUserDal
     {
         static List<User> users = new List<User>()
             {

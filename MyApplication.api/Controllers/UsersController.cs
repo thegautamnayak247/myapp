@@ -8,20 +8,20 @@ using DTO = MyApplication.Core;
 
 namespace MyApplication.api.Controllers
 {
-    public class RegistrationsController : ApiController
+    public class UsersController : ApiController
     {
-        IRegistrationDal registrationDal;
-        public RegistrationsController(): this(new RegistrationDal())
+        IUserDal registrationDal;
+        public UsersController(): this(new UserDal())
         {
 
         }
-        public RegistrationsController(IRegistrationDal _registrationDal)
+        public UsersController(IUserDal _registrationDal)
         {
             registrationDal = _registrationDal;
         }
         [HttpGet]
         [HttpHead]
-        [Route("api/Registrations",Name ="GetUser")]
+        [Route("api/Users",Name ="GetUser")]
         public IHttpActionResult Get()
         {
             var usersDto = registrationDal.GetUsers();
@@ -29,7 +29,7 @@ namespace MyApplication.api.Controllers
             return Ok(users);
         }
         [HttpGet]
-        [Route("api/Registrations/{userId}", Name ="GetUserById")]
+        [Route("api/Users/{userId}", Name ="GetUserById")]
         public IHttpActionResult GetUserById(int userId)
         {
             var userDto = registrationDal.GetUserById(userId);
@@ -42,7 +42,7 @@ namespace MyApplication.api.Controllers
         }
 
         [HttpPost]
-        [Route("api/Registrations")]
+        [Route("api/Users")]
         public IHttpActionResult Save([FromBody]User user)
         {
             if (ModelState.IsValid)
@@ -55,7 +55,7 @@ namespace MyApplication.api.Controllers
         }
 
         [HttpOptions]
-        [Route("api/Registrations", Name = "Options")]
+        [Route("api/Users", Name = "Options")]
         public IHttpActionResult Options()
         {
             HttpContext.Current.Response.AppendHeader("Allow", "GET,POST,OPTIONS");
